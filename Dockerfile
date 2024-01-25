@@ -3,7 +3,7 @@ FROM nginx:latest
 
 # Copy the HTHL files to the Nginx document root
 COPY index.html /usr/share/nginx/html/index.htnl
-COPY style.css /usr/share/nginx/htal/style.css
+COPY style.css /usr/share/nginx/html/style.css
 
 # Expose port 80 to allow incoming HTTP traffic
 EXPOSE 80
