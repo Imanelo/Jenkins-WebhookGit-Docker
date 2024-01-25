@@ -35,12 +35,6 @@ pipeline {
                     // Add debug logging
                     sh "ls -la Jenkins-WebhookGit-Docker" // List files in the current directory for debugging
                     dir('Jenkins-WebhookGit-Docker') {
-                    // If only version.txt was modified, skip the pipeline
-                    if (changes == VERSION_FILE) {
-                    echo "Skipping pipeline, as only ${VERSION_FILE} was modified."
-                    currentBuild.result = 'ABORTED'
-                    return
-                    }
                     // Read the current version from the file
                     def currentVersion = readFile(VERSION_FILE).trim()
 
